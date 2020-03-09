@@ -1,0 +1,27 @@
+<div class="row h-100 align-items-center">
+    <div class="col-12">
+        <h1 class="font-weight-light text-center">Content Child Example</h1>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 m-4 text-center">
+                    <app-contentchild-child>
+
+                        <div #slotOneRef class="alert alert-success" slot-one>
+                            Inside a ng-content
+                        </div>
+
+                        <div #slotTwoRef class="alert alert-danger" slot-two appContentChild>
+                            Inside a ng-content
+                        </div>
+
+                        <app-message></app-message>
+
+                    </app-contentchild-child>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

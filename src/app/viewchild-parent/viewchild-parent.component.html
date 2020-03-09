@@ -1,0 +1,112 @@
+<div class="row h-100 align-items-center">
+    <div class="col-12">
+        <h1 class="font-weight-light text-center">View Child Example</h1>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 m-3">
+                    <h3 class="text-center">Get reference Using JavaScript</h3>
+                    <div class="alert alert-info text-center" id='someElement'>Using document.getElementById()</div>
+                    <br>
+                    <h3 class="text-center">Get reference using Angular’s @ViewChild</h3>
+                    <div class="alert alert-warning text-center" #someElement>Using @ViewChild()</div>
+                </div>
+
+                <div class="col-12 m-3">
+                    <h3 class="text-center">Get reference using Angular Directive NgModel</h3>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">User Name: </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [(ngModel)]="userName">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 m-3 text-center">
+                    <h3 class="text-center">Get reference and DOM manipulation using Renderer2</h3>
+                    <br><br>
+                    <div #hoverRef class='badge-circle' (mouseover)="onMouseOver()" (mouseleave)="onMouseLeave()">
+                        <div class='text'>’Hallo !</div>
+                    </div>
+                </div>
+
+                <br><br>
+                <div class="col m-3">
+                    <h3 class="text-center">Get reference and DOM manipulation using Renderer2 Create Tag </h3>
+                    <div class="form-group row">
+                        <label class="col-sm-3 col-form-label">Enter Month: </label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control" [(ngModel)]="months">
+                        </div>
+                        <div class="col-sm-3 col-form-label">
+                            <button class="btn btn-success" (click)="createLiTag(months)">Click</button>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="box">
+                            <h3>Month's Name</h3>
+                            <ul class="s3" #createTagRef>
+                                <li>January</li>
+                                <li>February</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 m-3">
+                    <h3 class="text-center">
+                        Passed message from Parent component to Child component
+                    </h3>
+                    <div class="text-center">
+                        <button class="btn btn-success mr-4" (click)="success()">Save Success</button>
+                        <button class="btn btn-warning" (click)="failed()">Save Failes</button>
+                    </div>
+                    <br><br>
+                    <app-viewchild-child></app-viewchild-child>
+                </div>
+
+                <div class="col-12 m-3 text-center">
+                    <h3 class="text-center">Using custome Directives</h3>
+                    <div class="zoom" appViewChild (mouseover)="scaleUp()" (mouseleave)="scaleDown()">
+                        <img src="https://cdn.pixabay.com/photo/2016/09/26/20/10/grapes-1696921__340.jpg" alt="zoom"
+                            width="300" height="300" class="alignleft size-medium wp-image-7000" />
+                    </div>
+                </div>
+
+                <div class="col-12 m-3 text-center">
+                    <h3 class="text-center">Copy Template using ViewContainerRef</h3>
+
+                    <div class="text-center">
+                        <button class="btn btn-success m-4" (click)="createTemplate()">
+                            Create Template
+                        </button>
+                    </div>
+
+                    <ng-template #templateRef>
+                        <div class="alert alert-success text-center">
+                            ng-template content
+                        </div>
+                    </ng-template>
+
+                    <div #copyTemplate> </div>
+                </div>
+
+                <div class="col-12 m-3 text-center">
+                    <h3 class="text-center">Create a Dynamic component</h3>
+                    <div class="text-center">
+                        <button class="btn btn-success m-4" (click)="createDynamicComponent()">
+                            Create Component
+                        </button>
+                    </div>
+
+                    <div #contentProjection>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

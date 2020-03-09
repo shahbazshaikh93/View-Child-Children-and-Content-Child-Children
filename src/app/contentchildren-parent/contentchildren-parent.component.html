@@ -1,0 +1,20 @@
+<div class="row h-100 align-items-center">
+    <div class="col-12">
+        <h1 class="font-weight-light text-center">View Child Example</h1>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 text-center m-4">
+
+                    <app-contentchildren-child >
+                        <div *ngFor="let tab of tabs" #contentProjectRef>
+                            {{tab.title}}
+                        </div>
+                    </app-contentchildren-child>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="col-12">
+    <div *ngIf="defaultMessage!= null">
+        <div class="alert alert-success" role="alert" *ngIf="defaultMessage.status">
+            {{defaultMessage.message}}
+        </div>
+
+        <div class="alert alert-danger" role="alert" *ngIf="!defaultMessage.status">
+            {{defaultMessage.message}}
+        </div>
+    </div>
+
+    <pre>{{defaultMessage | json}}</pre>
+</div>

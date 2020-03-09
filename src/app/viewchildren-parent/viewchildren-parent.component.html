@@ -1,0 +1,80 @@
+<div class="row h-100 align-items-center">
+    <div class="col-12">
+        <h1 class="font-weight-light text-center">View Child Example</h1>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 text-center m-4">
+                    <h3 class="text-center">Using template-reference variables static</h3>
+                    <button #buttonRef type="button" class="btn btn-primary m-1">Primary</button>
+                    <button #buttonRef type="button" class="btn btn-secondary m-1">Secondary</button>
+                    <button #buttonRef type="button" class="btn btn-success m-1">Success</button>
+                    <button #buttonRef type="button" class="btn btn-danger m-1">Danger</button>
+                    <button #buttonRef type="button" class="btn btn-warning m-1">Warning</button>
+                    <button #buttonRef type="button" class="btn btn-info m-1">Info</button>
+                    <button #buttonRef type="button" class="btn btn-light m-1">Light</button>
+                </div>
+
+                <div class="col-12 text-center m-4">
+                    <h3 class="text-center">Using template-reference variables dynamic</h3>
+                    <h4>
+                        <span #badgeRef class="m-2 {{badge.className}}" *ngFor="let badge of badges">
+                            {{badge.name}}
+                        </span>
+                    </h4>
+                </div>
+
+                <div class="col-12 m-4">
+                    <h3 class="text-center">Using Multiple ngModel Directives</h3>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">First Name : </label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" [(ngModel)]="firstName" />
+                        </div>
+                        <label class="col-sm-2 col-form-label">Last Name :</label>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" [(ngModel)]="lastName" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Address : </label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" [(ngModel)]="address" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 m-4">
+                    <h3 class="text-center">Accessing multiple template-reference variables</h3>
+                    <div class="col-12">
+                        <input type="text" #userName />
+                        <input type="text" #userAge />
+                        <input type="text" #userDesignation />
+                    </div>
+                </div>
+
+                <div class="col-12 m-4 text-center">
+                    <h3 class="text-center">Mutiple Child Component</h3> <br>
+                    <app-viewchildren-child></app-viewchildren-child>
+                    <app-viewchildren-child></app-viewchildren-child>
+                    <app-viewchildren-child></app-viewchildren-child>
+                </div>
+
+                <div>
+                    <span appViewChildren>
+                        Angular 5
+                    </span>
+                    <span appViewChildren>
+                        Angular 6
+                    </span>
+                    <span appViewChildren>
+                        Angular 7
+                    </span>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
